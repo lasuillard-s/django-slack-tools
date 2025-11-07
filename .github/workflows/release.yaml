@@ -36,7 +36,7 @@ jobs:
           files: dist/*
 
       - name: Upload release distributions
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: release-dists
           path: dist/
