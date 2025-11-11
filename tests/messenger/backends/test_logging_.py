@@ -44,5 +44,5 @@ class TestLoggingBackend:
             header=MessageHeader(),
             body=None,
         )
-        with pytest.raises(ValueError, match="Message body is required."):
+        with pytest.raises(ValueError, match=r"Message body is required."):
             backend.deliver(request)
