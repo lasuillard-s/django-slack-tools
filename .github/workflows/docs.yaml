@@ -9,14 +9,13 @@ env:
 
 jobs:
   build-docs:
-    name: Build Docs
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Set up uv
-        uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
         with:
           version: latest
           enable-cache: true
@@ -28,14 +27,14 @@ jobs:
         run: make docs
 
       - name: Upload docs artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v
         with:
           path: site/
 
-  deploy-docs:
-    name: Deploy Docs
+  publish-docs:
     needs: build-docs
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       pages: write
       id-token: write
