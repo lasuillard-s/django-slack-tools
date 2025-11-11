@@ -2,17 +2,22 @@ name: Docs
 
 on:
   push:
+    branches: [main]
     tags: [v*]
+
+concurrency:
+  group: docs
+  cancel-in-progress: false
 
 env:
   UV_FROZEN: 1
 
 jobs:
-  build-docs:
+  docs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v5
       - uses: astral-sh/setup-uv@v7
@@ -23,28 +28,11 @@ jobs:
       - name: Install deps
         run: uv sync
 
-      - name: Generate API docs
-        run: make docs
+      - name: Configure Git user
+        run: |
+          git config --local user.email "github-actions[bot]@github.com"
+          git config --local user.name "GitHub Action"
 
-      - name: Upload docs artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: site/
-
-  publish-docs:
-    needs: build-docs
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    concurrency:
-      group: pages
-      cancel-in-progress: false
-    steps:
-      - name: Publish API docs to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Build docs
+        run: |
+          mike deploy --push "${{ github.ref_name }}"

@@ -34,7 +34,7 @@ run:  ## Run development server
 .PHONY: run
 
 serve-docs:  ## Serve dev documents
-	uv run mkdocs serve \
+	uv run mike serve \
 		--dev-addr $$([ ! -z "$${CONTAINER:-}" ] && echo '0.0.0.0:8000' || echo '127.0.0.1:8000')
 .PHONY: serve-docs
 
@@ -67,10 +67,6 @@ test:  ## Run tests
 	uv run pytest
 	uv run coverage html
 .PHONY: test
-
-docs:  ## Generate dev documents
-	uv run mkdocs build
-.PHONY: docs
 
 
 # =============================================================================
