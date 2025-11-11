@@ -27,7 +27,7 @@ jobs:
         run: make docs
 
       - name: Upload docs artifact
-        uses: actions/upload-pages-artifact@v
+        uses: actions/upload-pages-artifact@v4
         with:
           path: site/
 
