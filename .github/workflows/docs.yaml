@@ -35,4 +35,4 @@ jobs:
 
       - name: Build docs
         run: |
-          mike deploy --push "${{ github.ref_name }}"
+          uv run mike deploy --push "${{ github.ref_name }}"
