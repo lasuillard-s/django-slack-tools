@@ -38,7 +38,7 @@ Please check the [documentation](https://lasuillard.github.io/django-slack-tools
 
 ## 💖 Contributing
 
-All contributions and helps are welcome. Please check the [CONTRIBUTING.md](./CONTRIBUTING.md) file for about details.
+All contributions and helps are welcome. Please check the [CONTRIBUTING.md](/CONTRIBUTING.md) file for about details.
 
 ## 📜 License
 
