@@ -17,11 +17,11 @@ def data_dir() -> Path:
 class TestDjangoTemplate:
     def test_instance_creation(self) -> None:
         # Mutually exclusive arguments provided
-        with pytest.raises(TypeError, match="Exactly one of 'file' or 'inline' must be provided."):
+        with pytest.raises(TypeError, match=r"Exactly one of 'file' or 'inline' must be provided."):
             DjangoTemplate(file="whatever.xml", inline="<whatever>Whatever</whatever>")  # type: ignore[call-overload]
 
         # Unsupported file extension
-        with pytest.raises(TemplateDoesNotExist, match="template-does-not-exists.xml"):
+        with pytest.raises(TemplateDoesNotExist, match=r"template-does-not-exists.xml"):
             DjangoTemplate(file="template-does-not-exists.xml")
 
     @pytest.mark.parametrize(

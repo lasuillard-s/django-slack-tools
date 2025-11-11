@@ -126,5 +126,5 @@ class TestDjangoPolicyTemplateLoader:
         )
 
         loader = DjangoPolicyTemplateLoader()
-        with pytest.raises(ValueError, match="Unsupported template type: '?'"):
+        with pytest.raises(ValueError, match=r"Unsupported template type: '?'"):
             loader.load("TEST")

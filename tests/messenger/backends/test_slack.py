@@ -41,7 +41,7 @@ class TestSlackBackend:
         assert SlackBackend(slack_app=_slack_app)
         with pytest.raises(
             TypeError,
-            match="Expected <class 'slack_bolt.app.app.App'> instance, got <class 'int'>",
+            match=r"Expected <class 'slack_bolt.app.app.App'> instance, got <class 'int'>",
         ):
             SlackBackend(slack_app="tests.messenger.backends.test_slack._not_slack_app")
 
@@ -74,7 +74,7 @@ class TestSlackBackend:
             header=MessageHeader(),
             body=None,
         )
-        with pytest.raises(ValueError, match="Message body is required."):
+        with pytest.raises(ValueError, match=r"Message body is required."):
             backend.deliver(request)
 
     def test_deliver_remote_api_error(self, backend: SlackBackend, mock_slack_client: Mock) -> None:
@@ -158,7 +158,7 @@ class TestSlackRedirectBackend:
             header=MessageHeader(),
             body=None,
         )
-        with pytest.raises(ValueError, match="Message body is required."):
+        with pytest.raises(ValueError, match=r"Message body is required."):
             backend.deliver(request)
 
     def test_deliver_remote_api_error(self, backend: SlackRedirectBackend, mock_slack_client: Mock) -> None:

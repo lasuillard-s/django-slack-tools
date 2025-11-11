@@ -78,7 +78,7 @@ class TestDjangoDatabasePersister:
         DjangoDatabasePersister(slack_app=None, get_permalink=False)
         with pytest.raises(
             ValueError,
-            match="`slack_app` must be an instance of `App` if `get_permalink` is set `True`.",
+            match=r"`slack_app` must be an instance of `App` if `get_permalink` is set `True`.",
         ):
             DjangoDatabasePersister(slack_app=None, get_permalink=True)
 

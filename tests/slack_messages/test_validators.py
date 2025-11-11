@@ -16,7 +16,7 @@ def test_header_validator() -> None:
             "unfurl_media": None,
         },
     )
-    with pytest.raises(ValidationError, match=".+"):
+    with pytest.raises(ValidationError, match=r".+"):
         header_validator(
             {
                 "_unknown_": "Give me an error",
@@ -37,5 +37,5 @@ def test_body_validator() -> None:
             "username": None,
         },
     )
-    with pytest.raises(ValidationError, match=".+"):
+    with pytest.raises(ValidationError, match=r".+"):
         body_validator({})
