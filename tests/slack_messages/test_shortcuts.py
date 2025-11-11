@@ -134,7 +134,7 @@ def test_slack_message_mutually_exclusive_arguments(mock_slack_client: Mock) -> 
     mock_slack_client.chat_postMessage.return_value = SlackMessageResponseFactory()
 
     # Act & Assert
-    with pytest.raises(ValueError, match="Either `template` or `message` must be set, but not both."):
+    with pytest.raises(ValueError, match=r"Either `template` or `message` must be set, but not both."):
         slack_message(  # type: ignore[call-overload]
             "whatever-channel",
             message="Hello, World!",

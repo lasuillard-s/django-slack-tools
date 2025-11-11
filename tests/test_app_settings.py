@@ -145,7 +145,7 @@ class TestAppSettings:
     def test_bad_config_not_slack_app(self) -> None:
         with pytest.raises(
             ImproperlyConfigured,
-            match="Expected <class 'slack_bolt.app.app.App'> instance, got <class 'int'>",
+            match=r"Expected <class 'slack_bolt.app.app.App'> instance, got <class 'int'>",
         ):
             AppSettings.from_dict(
                 {
