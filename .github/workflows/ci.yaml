@@ -6,21 +6,18 @@ on:
   pull_request:
     branches: [main]
 
-permissions: read-all
-
 env:
   UV_FROZEN: 1
 
 jobs:
   lint:
-    name: Lint
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Set up uv
-        uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
         with:
           version: latest
           enable-cache: true
@@ -36,7 +33,7 @@ jobs:
         if: always()
 
   test:
-    name: Test (Python ${{ matrix.python-version }}, Django ${{ matrix.django-version }})
+    name: test (py${{ matrix.python-version }}, django${{ matrix.django-version }})
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -54,11 +51,8 @@ jobs:
             django-version: "5.2"
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Set up uv
-        uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
         with:
           version: latest
           enable-cache: true
