@@ -21,7 +21,7 @@ jobs:
           enable-cache: true
 
       - name: Install deps
-        run: uv sync --frozen
+        run: uv sync
 
       - name: Build package
         run: uv build
