@@ -7,24 +7,17 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
 
-  - repo: https://github.com/lasuillard/pre-commit-hooks
-    rev: v0.4.1
+  - repo: https://github.com/lasuillard-s/devobs
+    rev: v0.2.1
     hooks:
-      - id: source-matching-test
+      - id: check-file-pair
         args:
-          - --source
-          - django_slack_tools
+          - --from=pulumi_extra
+          - --to=tests
+          - --include=*.py
+          - --exclude=errors.py,**/migrations/*.py
+          - --expect={to}/{relative_from}/test_{filename}
           - --create-if-not-exists
-          - --extend-exclude
-          - "**/migrations/*.py"
-          - --extend-exclude
-          - "**/errors.py"
-      - id: test-matching-source
-        args:
-          - --target
-          - django_slack_tools
-      - id: preferred-suffix
-        args: [--rename]
 
   - repo: local
     hooks:
