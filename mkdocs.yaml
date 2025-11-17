@@ -1,6 +1,6 @@
 site_name: django-slack-tools
-repo_url: https://github.com/lasuillard/django-slack-tools
-repo_name: lasuillard/django-slack-tools
+repo_url: https://github.com/lasuillard-s/django-slack-tools
+repo_name: lasuillard-s/django-slack-tools
 theme:
   name: material
   icon:

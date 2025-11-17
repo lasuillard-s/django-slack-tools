@@ -1,6 +1,6 @@
 # 💝 Contributing
 
-Thank you for your interest in contributing to our project. Before contributing, please check [existing issues](https://github.com/lasuillard/django-slack-tools/issues). If there is a bug or feature that is not listed, create a new issue and make changes on it.
+Thank you for your interest in contributing to our project. Before contributing, please check [existing issues](https://github.com/lasuillard-s/django-slack-tools/issues). If there is a bug or feature that is not listed, create a new issue and make changes on it.
 
 ## ⚙️ Developing
 
