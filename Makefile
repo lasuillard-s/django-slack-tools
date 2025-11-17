@@ -34,7 +34,7 @@ run:  ## Run development server
 .PHONY: run
 
 serve-docs:  ## Serve dev documents
-	uv run mike serve \
+	uv run mkdocs serve \
 		--dev-addr $$([ ! -z "$${CONTAINER:-}" ] && echo '0.0.0.0:8000' || echo '127.0.0.1:8000')
 .PHONY: serve-docs
 
