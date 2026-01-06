@@ -21,7 +21,6 @@
         "tamasfe.even-better-toml",
         "streetsidesoftware.code-spell-checker",
         "EditorConfig.EditorConfig",
-        "VisualStudioExptTeam.vscodeintellicode",
         "charliermarsh.ruff",
         "ms-python.mypy-type-checker",
         "njpwerner.autodocstring",
