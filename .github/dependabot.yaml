@@ -9,6 +9,8 @@ updates:
 
   - package-ecosystem: uv
     directory: /
+    exclude-paths:
+      - "examples/**"
     schedule:
       interval: monthly
     ignore:
