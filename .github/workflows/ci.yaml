@@ -76,7 +76,7 @@ jobs:
         run: uv run nox
 
       - name: Upload test results to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           use_oidc: true
           fail_ci_if_error: false
@@ -87,7 +87,7 @@ jobs:
             django-${{ matrix.django-version }}
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         env:
           PYTHON: ${{ matrix.python-version }}
           DJANGO: ${{ matrix.django-version }}
