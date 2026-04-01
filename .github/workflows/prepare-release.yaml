@@ -35,7 +35,7 @@ jobs:
           uv version "${tag#v}"
 
       - name: Generate GitHub App token
-        uses: actions/create-github-app-token@v2
+        uses: actions/create-github-app-token@v3
         id: generate-token
         with:
           app-id: ${{ vars.GH_APP_ID }}
