@@ -1,8 +1,7 @@
 {
   "name": "lasuillard-s/django-slack-tools",
-  "image": "mcr.microsoft.com/devcontainers/base:trixie",
+  "image": "mcr.microsoft.com/devcontainers/python:trixie",
   "features": {
-    "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
       "moby": false
     }
