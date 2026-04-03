@@ -1,29 +1,24 @@
 {
   "name": "lasuillard-s/django-slack-tools",
-  "image": "mcr.microsoft.com/devcontainers/base:1-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/base:trixie",
   "features": {
     "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
-    "ghcr.io/devcontainers-extra/features/apt-get-packages:1": {
-      "packages": "gettext"
-    },
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": false
+    }
   },
   "onCreateCommand": "./.devcontainer/onCreateCommand.sh",
-  "postAttachCommand": "make install",
+  "postStartCommand": "./.devcontainer/postStartCommand.sh",
+  "updateContentCommand": "./.devcontainer/updateContentCommand.sh",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
         "batisteo.vscode-django",
-        "ldez.ignore-files",
-        "redhat.vscode-yaml",
-        "tamasfe.even-better-toml",
-        "streetsidesoftware.code-spell-checker",
         "EditorConfig.EditorConfig",
         "charliermarsh.ruff",
         "ms-python.mypy-type-checker",
-        "njpwerner.autodocstring",
         "ms-toolsai.jupyter",
         "ms-python.debugpy"
       ]
