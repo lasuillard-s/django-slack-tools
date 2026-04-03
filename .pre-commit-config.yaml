@@ -12,10 +12,10 @@ repos:
     hooks:
       - id: check-file-pair
         args:
-          - --from=pulumi_extra
+          - --from=django_slack_tools
           - --to=tests
           - --include=*.py
-          - --exclude=errors.py,**/migrations/*.py
+          - --exclude=errors.py,**/migrations/*.py,*.py
           - --expect={to}/{relative_from}/test_{filename}
           - --create-if-not-exists
 
