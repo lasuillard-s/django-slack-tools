@@ -3,14 +3,9 @@
     "ms-python.python",
     "ms-python.vscode-pylance",
     "batisteo.vscode-django",
-    "ldez.ignore-files",
-    "redhat.vscode-yaml",
-    "tamasfe.even-better-toml",
-    "streetsidesoftware.code-spell-checker",
     "EditorConfig.EditorConfig",
     "charliermarsh.ruff",
     "ms-python.mypy-type-checker",
-    "njpwerner.autodocstring",
     "ms-toolsai.jupyter",
     "ms-python.debugpy"
   ]

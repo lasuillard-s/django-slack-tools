@@ -20,8 +20,11 @@ help: Makefile  ## Show help
 install:  ## Install deps
 	uv python install
 	uv sync --frozen --all-extras
-	pre-commit install --install-hooks
 .PHONY: install
+
+init:  ## Init project
+	pre-commit install --install-hooks
+.PHONY: init
 
 update:  ## Update deps and tools
 	uv sync --upgrade --all-extras
@@ -38,13 +41,13 @@ serve-docs:  ## Serve dev documents
 		--dev-addr $$([ ! -z "$${CONTAINER:-}" ] && echo '0.0.0.0:8000' || echo '127.0.0.1:8000')
 .PHONY: serve-docs
 
-makemessages:  ## Update translation files
+msg:  ## Update translation files
 	uv run python manage.py makemessages --all --ignore 'examples/*' --no-obsolete
-.PHONY: makemessages
+.PHONY: msg
 
-compilemessages:  ## Compile translation files
+compmsg:  ## Compile translation files
 	uv run python manage.py compilemessages --ignore 'examples/*'
-.PHONY: compilemessages
+.PHONY: compmsg
 
 
 # =============================================================================
@@ -53,10 +56,13 @@ compilemessages:  ## Compile translation files
 ci: lint test  ## Run CI tasks
 .PHONY: ci
 
-format:  ## Run autoformatters
-	uv run ruff check --fix .
+fmt:  ## Run autoformatters
 	uv run ruff format .
-.PHONY: format
+.PHONY: fmt
+
+fix:  ## Autofix issues
+	uv run ruff check --fix .
+.PHONY: fix
 
 lint:  ## Run all linters
 	uv run ruff check .
