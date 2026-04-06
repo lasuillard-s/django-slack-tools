@@ -18,7 +18,7 @@ celery = ["celery>=5,<6"]
 
 [dependency-groups]
 dev = [
-	"django-debug-toolbar>=4.4,<6.0",
+	"django-debug-toolbar>=6.3,<6.4",
 	"django-extensions>=3.2,<5.0",
 	"django-stubs[compatible-mypy]~=5.1",
 	"ipykernel~=6.27",
