@@ -1,8 +1,9 @@
 junit.xml
 **/*.ipynb
 /staticfiles/
-.devcontainer/
-.vscode/
+.devcontainer
+.vscode
+.envrc
 
 # Created by https://www.toptal.com/developers/gitignore/api/git,linux,macos,django,python,windows,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,linux,macos,django,python,windows,visualstudiocode
