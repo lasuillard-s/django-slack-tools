@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Callable
+from typing import TYPE_CHECKING, Any
 
 from django.utils.decorators import method_decorator
 from django.views import View
@@ -10,6 +10,8 @@ from django.views.decorators.csrf import csrf_exempt
 from slack_bolt.adapter.django import SlackRequestHandler
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+
     from django.http import HttpRequest, HttpResponse
     from slack_bolt import App
 

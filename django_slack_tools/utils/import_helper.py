@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, TypedDict, Union
+from typing import Any, TypedDict
 
 from django.utils.module_loading import import_string
 from typing_extensions import NotRequired
@@ -15,7 +15,7 @@ LazyInitSpec = TypedDict(
         "kwargs": NotRequired[dict[str, Any]],
     },
 )
-LazyInitSupported = Union[LazyInitSpec, str]
+LazyInitSupported = LazyInitSpec | str
 
 
 def lazy_init(spec: LazyInitSupported) -> Any:

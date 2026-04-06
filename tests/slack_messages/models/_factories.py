@@ -37,7 +37,7 @@ class SlackMessageRecipientFactory(DjangoModelFactory):
     channel_name = LazyAttribute(lambda _: f"#{_fake.pystr()}")
 
     @post_generation
-    def mentions(  # type: ignore[misc]
+    def mentions(
         self: SlackMessageRecipient,
         create: bool,  # noqa: FBT001
         extracted: Sequence[SlackMention],
@@ -66,7 +66,7 @@ class SlackMessageFactory(DjangoModelFactory):
 
     # Hook to set the created(`auto_now_add` set) field after creation
     @post_generation
-    def created(  # type: ignore[misc]
+    def created(
         self: SlackMessage,
         create: bool,  # noqa: FBT001
         extracted: datetime,
@@ -87,7 +87,7 @@ class SlackMessagingPolicyFactory(DjangoModelFactory):
     enabled = True
 
     @post_generation
-    def recipients(  # type: ignore[misc]
+    def recipients(
         self: SlackMessagingPolicy,
         create: bool,  # noqa: FBT001
         extracted: Sequence[SlackMessageRecipient],
