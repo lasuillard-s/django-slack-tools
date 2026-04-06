@@ -1451,7 +1451,7 @@
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -1477,6 +1477,7 @@
               Bases: <code><a class="autorefs autorefs-internal" title="BaseMiddleware (django_slack_tools.messenger.shortcuts.BaseMiddleware)" href="../messenger/#django_slack_tools.messenger.middlewares.BaseMiddleware">BaseMiddleware</a></code></p>
 
 
+
         <p>Persist message history to database. If request is <code>None</code>, will do nothing.</p>
 
 
@@ -1486,7 +1487,7 @@
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/messenger/middlewares.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-19">19</a></span>
 <span class="normal"><a href="#__codelineno-0-20">20</a></span>
@@ -1624,7 +1625,7 @@
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -1696,7 +1697,7 @@
     </table>
 
 
-            <details class="quote">
+            <details class="mkdocstrings-source">
               <summary>Source code in <code>django_slack_tools/slack_messages/messenger/middlewares.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-22">22</a></span>
 <span class="normal"><a href="#__codelineno-0-23">23</a></span>
@@ -1753,6 +1754,7 @@
               Bases: <code><a class="autorefs autorefs-internal" title="BaseMiddleware (django_slack_tools.messenger.shortcuts.BaseMiddleware)" href="../messenger/#django_slack_tools.messenger.middlewares.BaseMiddleware">BaseMiddleware</a></code></p>
 
 
+
         <p>Middleware to handle Slack messaging policies stored in the database.</p>
 <p>Be cautious when using this middleware because it includes functionality to distribute messages to multiple recipients,
 which could lead to unwanted infinite loop or recursion if used improperly.</p>
@@ -1766,7 +1768,7 @@ If the key is found in the context, the middleware will stop the message from be
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/messenger/middlewares.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
 <span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
@@ -2024,7 +2026,7 @@ If the key is found in the context, the middleware will stop the message from be
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -2122,7 +2124,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
     </table>
 
 
-            <details class="quote">
+            <details class="mkdocstrings-source">
               <summary>Source code in <code>django_slack_tools/slack_messages/messenger/middlewares.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-103">103</a></span>
 <span class="normal"><a href="#__codelineno-0-104">104</a></span>
@@ -2199,6 +2201,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><a class="autorefs autorefs-internal" title="BaseTemplateLoader (django_slack_tools.messenger.shortcuts.BaseTemplateLoader)" href="../messenger/#django_slack_tools.messenger.template_loaders.BaseTemplateLoader">BaseTemplateLoader</a></code></p>
 
 
+
         <p>Django database-backed template loader.</p>
 
 
@@ -2208,7 +2211,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/messenger/template_loaders.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-40">40</a></span>
 <span class="normal"><a href="#__codelineno-0-41">41</a></span>
@@ -2284,7 +2287,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -2319,6 +2322,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><a class="autorefs autorefs-internal" title="BaseTemplate (django_slack_tools.messenger.shortcuts.BaseTemplate)" href="../messenger/#django_slack_tools.messenger.message_templates.BaseTemplate">BaseTemplate</a></code></p>
 
 
+
         <p>Template utilizing Django built-in template engine.</p>
 
 
@@ -2328,7 +2332,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/messenger/message_templates.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-24">24</a></span>
 <span class="normal"><a href="#__codelineno-0-25">25</a></span>
@@ -2430,7 +2434,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -2549,7 +2553,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
     </table>
 
 
-            <details class="quote">
+            <details class="mkdocstrings-source">
               <summary>Source code in <code>django_slack_tools/slack_messages/messenger/message_templates.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-35">35</a></span>
 <span class="normal"><a href="#__codelineno-0-36">36</a></span>
@@ -2644,6 +2648,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><a class="autorefs autorefs-internal" title="BaseTemplateLoader (django_slack_tools.messenger.shortcuts.BaseTemplateLoader)" href="../messenger/#django_slack_tools.messenger.template_loaders.BaseTemplateLoader">BaseTemplateLoader</a></code></p>
 
 
+
         <p>Django filesystem-backed template loader.</p>
 
 
@@ -2653,7 +2658,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/messenger/template_loaders.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-21">21</a></span>
 <span class="normal"><a href="#__codelineno-0-22">22</a></span>
@@ -2693,7 +2698,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -2749,7 +2754,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
     </table>
 
 
-            <details class="quote">
+            <details class="mkdocstrings-source">
               <summary>Source code in <code>django_slack_tools/slack_messages/messenger/template_loaders.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-24">24</a></span>
 <span class="normal"><a href="#__codelineno-0-25">25</a></span>
@@ -2808,7 +2813,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -2834,6 +2839,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><span title="django_slack_tools.utils.django.model_mixins.TimestampMixin">TimestampMixin</span></code>, <code><span title="django.db.models.Model">Model</span></code></p>
 
 
+
         <p>People or group in channels receive messages.</p>
 
 
@@ -2843,7 +2849,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/models/mention.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-15">15</a></span>
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
@@ -2967,7 +2973,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -3015,6 +3021,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><span title="django.db.models.TextChoices">TextChoices</span></code></p>
 
 
+
         <p>Possible mention types.</p>
 
 
@@ -3024,7 +3031,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/models/mention.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-18">18</a></span>
 <span class="normal"><a href="#__codelineno-0-19">19</a></span>
@@ -3058,7 +3065,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -3194,6 +3201,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><span title="django_slack_tools.utils.django.model_mixins.TimestampMixin">TimestampMixin</span></code>, <code><span title="django.db.models.Model">Model</span></code></p>
 
 
+
         <p>An Slack message.</p>
 
 
@@ -3203,7 +3211,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/models/message.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-20"> 20</a></span>
 <span class="normal"><a href="#__codelineno-0-21"> 21</a></span>
@@ -3409,7 +3417,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -3444,6 +3452,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><span title="django_slack_tools.utils.django.model_mixins.TimestampMixin">TimestampMixin</span></code>, <code><span title="django.db.models.Model">Model</span></code></p>
 
 
+
         <p>People or group in channels receive messages.</p>
 
 
@@ -3453,7 +3462,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/models/message_recipient.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-17">17</a></span>
 <span class="normal"><a href="#__codelineno-0-18">18</a></span>
@@ -3545,7 +3554,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -3580,6 +3589,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><span title="django_slack_tools.utils.django.model_mixins.TimestampMixin">TimestampMixin</span></code>, <code><span title="django.db.models.Model">Model</span></code></p>
 
 
+
         <p>An Slack messaging policy which determines message content and those who receive messages.</p>
 
 
@@ -3589,7 +3599,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/models/messaging_policy.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-23">23</a></span>
 <span class="normal"><a href="#__codelineno-0-24">24</a></span>
@@ -3737,7 +3747,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -3763,6 +3773,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
               Bases: <code><span title="django.db.models.TextChoices">TextChoices</span></code></p>
 
 
+
         <p>Possible template types.</p>
 
 
@@ -3772,7 +3783,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-              <details class="quote">
+              <details class="mkdocstrings-source">
                 <summary>Source code in <code>django_slack_tools/slack_messages/models/messaging_policy.py</code></summary>
                 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-26">26</a></span>
 <span class="normal"><a href="#__codelineno-0-27">27</a></span>
@@ -3806,7 +3817,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -3958,7 +3969,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -4134,7 +4145,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
     </table>
 
 
-            <details class="quote">
+            <details class="mkdocstrings-source">
               <summary>Source code in <code>django_slack_tools/slack_messages/shortcuts.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-38">38</a></span>
 <span class="normal"><a href="#__codelineno-0-39">39</a></span>
@@ -4254,7 +4265,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
 
 
 
-  <div class="doc doc-children">
+<div class="doc doc-children">
 
 
 
@@ -4349,7 +4360,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
     </table>
 
 
-            <details class="quote">
+            <details class="mkdocstrings-source">
               <summary>Source code in <code>django_slack_tools/slack_messages/tasks.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-36">36</a></span>
 <span class="normal"><a href="#__codelineno-0-37">37</a></span>
@@ -4496,7 +4507,7 @@ Also, there are chances of infinite loops if the same messenger is used.</p>
     </table>
 
 
-            <details class="quote">
+            <details class="mkdocstrings-source">
               <summary>Source code in <code>django_slack_tools/slack_messages/tasks.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-21">21</a></span>
 <span class="normal"><a href="#__codelineno-0-22">22</a></span>
