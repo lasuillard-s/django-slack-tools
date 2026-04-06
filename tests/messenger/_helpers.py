@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Callable
+from typing import TYPE_CHECKING, Any
 
 from django_slack_tools.messenger.shortcuts import (
     BaseMiddleware,
@@ -11,6 +11,8 @@ from django_slack_tools.messenger.shortcuts import (
 )
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+
     from django_slack_tools.messenger.shortcuts import MessageRequest, MessageResponse
 
 
