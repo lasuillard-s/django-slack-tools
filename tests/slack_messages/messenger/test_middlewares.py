@@ -97,7 +97,7 @@ class TestDjangoDatabasePersister:
 
         assert result is response
         assert saved_message.policy is None
-        assert saved_message.channel == response.request.channel
+        assert saved_message.channel == response.request.channel  # type: ignore[union-attr]
         assert saved_message.header == {
             "mrkdwn": None,
             "parse": None,
@@ -107,9 +107,9 @@ class TestDjangoDatabasePersister:
             "unfurl_media": None,
         }
         assert saved_message.body == {}
-        assert saved_message.ok == response.ok
+        assert saved_message.ok == response.ok  # type: ignore[union-attr]
         assert saved_message.permalink == permalink
-        assert saved_message.ts == response.ts
+        assert saved_message.ts == response.ts  # type: ignore[union-attr]
         assert saved_message.parent_ts == ""
         assert MessageRequest.model_validate(saved_message.request)
         assert MessageResponse.model_validate(saved_message.response)
