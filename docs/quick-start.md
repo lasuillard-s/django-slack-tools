@@ -27,6 +27,7 @@ Add configuration for application:
 
 ```python
 DJANGO_SLACK_TOOLS = {
+    "slack_app": "<module.path.to.your-slack-app>",
     "messengers": {
         "default": {
             "class": "django_slack_tools.messenger.shortcuts.Messenger",
