@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: password
 
   valkey:
-    image: valkey/valkey:8-bookworm
+    image: valkey/valkey:9.1.0-trixie
     ports:
       - ${VALKEY_HOST:-127.0.0.1}:${VALKEY_PORT:-6379}:6379
 
