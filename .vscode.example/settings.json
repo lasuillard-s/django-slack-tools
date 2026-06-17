@@ -1,8 +1,11 @@
 {
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.testing.pytestArgs": [
+    "--no-cov" // Fix debugger not stopping if pytest-cov is installed
+  ],
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false
 }
