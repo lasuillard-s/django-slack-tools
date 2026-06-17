@@ -3,13 +3,14 @@
   "configurations": [
     {
       // Launch Django application server
-      "name": "Python: Run Django app",
+      "name": "Django: Run Test Project",
       "type": "debugpy",
       "request": "launch",
-      "cwd":"${workspaceFolder}/testproj",
-      "program":"manage.py",
+      "cwd": "${workspaceFolder}/testproj",
+      "program": "manage.py",
       "args": [
-        "runserver", "127.0.0.1:8000"
+        "runserver",
+        "127.0.0.1:8000"
       ],
       "django": true,
       "justMyCode": true,

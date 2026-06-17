@@ -1,19 +1,19 @@
 [project]
 name = "todo"
 version = "0.1.0"
-description = "Example To-Do Slack bot application."
+description = "Simple To Do bot example built with django-slack-tools."
 authors = [{ name = "Yuchan Lee", email = "lasuillard@gmail.com" }]
 license = "MIT"
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = [
     "django-slack-tools",
-    "django>=5,<6",
-    "celery[django,redis]>=5,<6",
-    "django-celery-beat>=2,<3",
-    "psycopg2-binary>=2.9.10",
-    "django-celery-results>=2.5.1",
-    "django-environ>=0.12.0",
+    "django==5.2.15",
+    "celery[django,redis]==5.4.0",
+    "django-celery-beat==2.9.0",
+    "psycopg2-binary==2.9.10",
+    "django-celery-results==2.5.1",
+    "django-environ==0.12.0",
 ]
 
 [tool.uv]

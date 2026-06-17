@@ -1,48 +1,73 @@
 # 💝 Contributing
 
-Thank you for your interest in contributing to our project. Before contributing, please check [existing issues](https://github.com/lasuillard-s/django-slack-tools/issues). If there is a bug or feature that is not listed, create a new issue and make changes on it.
+Thank you for your interest in contributing to this project, **django-slack-tools**!
 
-## ⚙️ Developing
+## 🐛 Reporting issues
 
-### 🍴 [Fork the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+Please report issues in our [GitHub repository](https://github.com/lasuillard-s/django-slack-tools/issues). Before submitting an issue, please search for existing issues to avoid duplicates.
 
-### 🐋 Set up development environment
+## 🏗️ Project overview
 
-This project repository has configured development container. Get a quick start with [GitHub Codespaces](https://github.com/features/codespaces) or [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/tutorial).
+This project provides utilities and examples to help you integrate Slack into your Django project. Key features include:
 
-### 🖊️ Format and lint codes
+- Django app for Slack messaging with database integration and an admin interface
+- Various templates for Slack messages, including Python dictionary-based templates, XML templates, and more
+- Slack integration features for core Django ecosystem tools such as Celery
 
-We use [Ruff](https://github.com/astral-sh/ruff) to format codes and check types using [mypy](https://mypy-lang.org/). Format codes with:
+### 🛠️ Tech stack
 
-```bash
-$ make format
-$ make lint
-```
+This project uses the following tech stack:
 
-### ✅ Test your changes
+- [Python](https://www.python.org) 3.10+
+- [Django](https://www.djangoproject.com/) LTS
+- [slack-bolt](https://github.com/slackapi/bolt-python) for Slack integrations
+- [uv](https://docs.astral.sh/uv/) for dependency management and packaging
+- [Ruff](https://docs.astral.sh/ruff/) to lint and format Python code, and [mypy](https://mypy-lang.org) for type checking
+- [pytest](https://docs.pytest.org/en/latest) for testing
 
-Once changes made, it should be tested. We use [pytest](https://docs.pytest.org/en/8.0.x/) for testing.
+### 📂 Key directory structure
 
-Run tests with:
+- `django_slack_tools/`: The project's source code
+- `docs/`: Project documentation
+- `examples/`: Project usage examples
+- `testproj/`: Test Django project for development
+- `tests/`: Project tests
+- `flake.nix`: Flake configuration for the development environment
+- `Justfile`: Commands for development
+- `pyproject.toml`: Project dependencies and configuration
 
-```bash
-$ make test
-```
+## 🔧 Set up the development environment
 
-### ✨ [Create PR](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
+For development, the following tools are required:
 
-We will review your PR and reply as soon as possible.
+### ❄️ Tools managed via Nix Flakes
 
-## 🗒️ Docs
+This repository uses [Nix Flakes](https://nix.dev/concepts/flakes.html) to manage tools. The following tools are automatically installed (requires `nix` to be installed):
 
-Docs are generated using [MkDocs](https://www.mkdocs.org/). To see docs locally with live reloading:
+- `pre-commit`
+- `just`
+- `uv`
+- `pipx`
+- `gettext` for i18n
+- `ngrok` for local Slack bot testing
 
-```bash
-$ make serve-docs
-```
+Simply run `nix develop` to start the development environment, then run `just install` to install dependencies.
 
-Go to http://localhost:8000 and you will see the docs preview.
+If you prefer using a [Dev Container](https://containers.dev), a configuration file ([devcontainer.json](./.devcontainer.example/devcontainer.json)) is provided with Nix pre-installed.
 
-## 🔗 Resources
+## ✅ Verifying changes
 
-- [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
+Before pushing your code, verify that your changes adhere to the project's coding standards. Run `just ci` to execute all necessary linters, formatters, and tests. Alternatively, let the `pre-commit` hooks handle this automatically.
+
+## ✨ Submitting changes
+
+Feel free to submit pull requests on GitHub. Before opening a PR, ensure your changes pass all checks by running `just ci`.
+
+## 🚀 Release process
+
+This project's distribution is built using `uv` and published to PyPI via GitHub Actions. To release a new version, follow these steps:
+
+1. Dispatch workflow [prepare-release](./.github/workflows/prepare-release.yaml) with the new version as input
+1. Review and merge the generated pull request
+1. Create and publish a GitHub release with the new version as tag
+1. The release workflow will automatically build and publish the package to PyPI

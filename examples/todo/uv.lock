@@ -142,21 +142,21 @@ wheels = [
 
 [[package]]
 name = "django"
-version = "5.1.15"
+version = "5.2.15"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "asgiref" },
     { name = "sqlparse" },
     { name = "tzdata", marker = "sys_platform == 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/10/45/1ac68964193cfcc0b0912a0f68025d5bdb54f71ba7b8716e85b959874bd0/django-5.1.15.tar.gz", hash = "sha256:46a356b5ff867bece73fc6365e081f21c569973403ee7e9b9a0316f27d0eb947", size = 10719662, upload-time = "2025-12-02T14:01:31.931Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2b/e3/31722f7284c9f43333daff9aee9184678e4487adcb5506af0db8cea09ce1/django-5.2.15.tar.gz", hash = "sha256:5154a9bf84ac01dde011e367f355c07dbb329532e06810dcf3ef2af269e236e7", size = 10873669, upload-time = "2026-06-03T13:03:35.892Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/27/79/372e091f0eba4ddb8228245ccd1baaa140e9658711f5e3a0056e540b4c1e/django-5.1.15-py3-none-any.whl", hash = "sha256:117871e58d6eda37f09870b7d73a3d66567b03aecd515b386b1751177c413432", size = 8260901, upload-time = "2025-12-02T14:01:27.352Z" },
+    { url = "https://files.pythonhosted.org/packages/92/b5/38140b1643c00d5c46ce69c78e6980fd285aee223100319631bedee4f5e7/django-5.2.15-py3-none-any.whl", hash = "sha256:0eb4a9bb1853a35b0286dbc6d916bd352c8c2687195a7f2d6f80cefd840e4970", size = 8311957, upload-time = "2026-06-03T13:03:31.329Z" },
 ]
 
 [[package]]
 name = "django-celery-beat"
-version = "2.7.0"
+version = "2.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "celery" },
@@ -166,9 +166,9 @@ dependencies = [
     { name = "python-crontab" },
     { name = "tzdata" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/03/8f/8a18f234173001bd7a7d63826d2d7f456b38031c892514d27c0f7aea10be/django_celery_beat-2.7.0.tar.gz", hash = "sha256:8482034925e09b698c05ad61c36ed2a8dbc436724a3fe119215193a4ca6dc967", size = 163472, upload-time = "2024-08-22T11:12:24.943Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/05/45/fc97bc1d9af8e7dc07f1e37044d9551a30e6793249864cef802341e2e3a8/django_celery_beat-2.9.0.tar.gz", hash = "sha256:92404650f52fcb44cf08e2b09635cb1558327c54b1a5d570f0e2d3a22130934c", size = 177667, upload-time = "2026-02-28T16:45:34.749Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/29/f8/f5a25472222b19258c3a53ce71c4efd171a12ab3c988bb3026dec0522a64/django_celery_beat-2.7.0-py3-none-any.whl", hash = "sha256:851c680d8fbf608ca5fecd5836622beea89fa017bc2b3f94a5b8c648c32d84b1", size = 94097, upload-time = "2024-08-22T11:12:23.172Z" },
+    { url = "https://files.pythonhosted.org/packages/71/ae/9befa7ae37f5e5c41be636a254fcf47ff30dd5c88bd115070e252f6b9162/django_celery_beat-2.9.0-py3-none-any.whl", hash = "sha256:4a9e5ebe26d6f8d7215e1fc5c46e466016279dc102435a28141108649bdf2157", size = 105013, upload-time = "2026-02-28T16:45:32.822Z" },
 ]
 
 [[package]]
@@ -195,7 +195,7 @@ wheels = [
 
 [[package]]
 name = "django-slack-tools"
-version = "0.3.4"
+version = "0.4.1"
 source = { directory = "../../" }
 dependencies = [
     { name = "django" },
@@ -207,35 +207,36 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "celery", marker = "extra == 'celery'", specifier = ">=5,<6" },
-    { name = "django", specifier = ">=4.2,<5.2" },
+    { name = "django", specifier = ">=5.2,<6" },
     { name = "pydantic", specifier = ">=2,<3" },
     { name = "slack-bolt", specifier = ">=1,<2" },
-    { name = "xmltodict", specifier = ">=0.14.1,<1" },
+    { name = "xmltodict", specifier = ">=1.0.4,<2" },
 ]
 provides-extras = ["celery"]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "coverage", specifier = "~=7.3" },
-    { name = "django-coverage-plugin", specifier = "~=3.1" },
-    { name = "django-debug-toolbar", specifier = ">=4.4,<6.0" },
-    { name = "django-extensions", specifier = ">=3.2,<5.0" },
-    { name = "django-stubs", extras = ["compatible-mypy"], specifier = "~=5.1" },
-    { name = "factory-boy", specifier = "~=3.3" },
-    { name = "faker", specifier = ">=30.3,<37.0" },
-    { name = "ipykernel", specifier = "~=6.27" },
-    { name = "mike", specifier = ">=2.1.3" },
-    { name = "mkdocs", specifier = "~=1.6" },
-    { name = "mkdocs-material", specifier = "~=9.5" },
-    { name = "mkdocstrings", extras = ["python"], specifier = "~=0.26" },
-    { name = "mypy", specifier = "~=1.11" },
-    { name = "nox", specifier = ">=2024.10.9,<2025.3.0" },
-    { name = "pytest", specifier = "~=8.0" },
-    { name = "pytest-cov", specifier = ">=5,<7" },
-    { name = "pytest-django", specifier = "~=4.9" },
-    { name = "pytest-sugar", specifier = "~=1.0" },
-    { name = "pytest-xdist", specifier = "~=3.6" },
-    { name = "ruff", specifier = "~=0.6" },
+    { name = "coverage", specifier = "==7.14.1" },
+    { name = "devobs", specifier = "==0.2.6" },
+    { name = "django-coverage-plugin", specifier = "==3.2.2" },
+    { name = "django-debug-toolbar", specifier = "==6.3.0" },
+    { name = "django-extensions", specifier = "==4.1" },
+    { name = "django-stubs", extras = ["compatible-mypy"], specifier = "==6.0.5" },
+    { name = "factory-boy", specifier = "==3.3.3" },
+    { name = "faker", specifier = "==40.20.0" },
+    { name = "ipykernel", specifier = "==7.2.0" },
+    { name = "mike", specifier = "==2.2.0" },
+    { name = "mkdocs", specifier = "==1.6.1" },
+    { name = "mkdocs-material", specifier = "==9.7.6" },
+    { name = "mkdocstrings", extras = ["python"], specifier = "==1.0.4" },
+    { name = "mypy", specifier = "==2.1.0" },
+    { name = "nox", specifier = "==2026.4.10" },
+    { name = "pytest", specifier = "==9.0.3" },
+    { name = "pytest-cov", specifier = "==7.1.0" },
+    { name = "pytest-django", specifier = "==4.12.0" },
+    { name = "pytest-sugar", specifier = "==1.1.1" },
+    { name = "pytest-xdist", specifier = "==3.8.0" },
+    { name = "ruff", specifier = "==0.15.15" },
 ]
 
 [[package]]
@@ -444,13 +445,13 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "celery", extras = ["django", "redis"], specifier = ">=5,<6" },
-    { name = "django", specifier = ">=5,<6" },
-    { name = "django-celery-beat", specifier = ">=2,<3" },
-    { name = "django-celery-results", specifier = ">=2.5.1" },
-    { name = "django-environ", specifier = ">=0.12.0" },
+    { name = "celery", extras = ["django", "redis"], specifier = "==5.4.0" },
+    { name = "django", specifier = "==5.2.15" },
+    { name = "django-celery-beat", specifier = "==2.9.0" },
+    { name = "django-celery-results", specifier = "==2.5.1" },
+    { name = "django-environ", specifier = "==0.12.0" },
     { name = "django-slack-tools", directory = "../../" },
-    { name = "psycopg2-binary", specifier = ">=2.9.10" },
+    { name = "psycopg2-binary", specifier = "==2.9.10" },
 ]
 
 [[package]]
@@ -491,9 +492,9 @@ wheels = [
 
 [[package]]
 name = "xmltodict"
-version = "0.14.2"
+version = "1.0.4"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/50/05/51dcca9a9bf5e1bce52582683ce50980bcadbc4fa5143b9f2b19ab99958f/xmltodict-0.14.2.tar.gz", hash = "sha256:201e7c28bb210e374999d1dde6382923ab0ed1a8a5faeece48ab525b7810a553", size = 51942, upload-time = "2024-10-16T06:10:29.683Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/19/70/80f3b7c10d2630aa66414bf23d210386700aa390547278c789afa994fd7e/xmltodict-1.0.4.tar.gz", hash = "sha256:6d94c9f834dd9e44514162799d344d815a3a4faec913717a9ecbfa5be1bb8e61", size = 26124, upload-time = "2026-02-22T02:21:22.074Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d6/45/fc303eb433e8a2a271739c98e953728422fa61a3c1f36077a49e395c972e/xmltodict-0.14.2-py2.py3-none-any.whl", hash = "sha256:20cc7d723ed729276e808f26fb6b3599f786cbc37e06c65e192ba77c40f20aac", size = 9981, upload-time = "2024-10-16T06:10:27.649Z" },
+    { url = "https://files.pythonhosted.org/packages/38/34/98a2f52245f4d47be93b580dae5f9861ef58977d73a79eb47c58f1ad1f3a/xmltodict-1.0.4-py3-none-any.whl", hash = "sha256:a4a00d300b0e1c59fc2bfccb53d7b2e88c32f200df138a0dd2229f842497026a", size = 13580, upload-time = "2026-02-22T02:21:21.039Z" },
 ]
