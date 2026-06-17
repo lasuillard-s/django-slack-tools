@@ -96,11 +96,11 @@ message = slack_message(
 )
 ```
 
-Please check the [documentation](https://lasuillard.github.io/django-slack-tools/) for more examples and details.
+Please check the [documentation](https://lasuillard-s.github.io/django-slack-tools/) for more examples and details.
 
 ## 💖 Contributing
 
-All contributions and help are welcome. Please check the [CONTRIBUTING.md](/CONTRIBUTING.md) file for contribution guides.
+All contributions and help are welcome. Please check the [CONTRIBUTING.md](./CONTRIBUTING.md) file for contribution guides.
 
 ## 📜 License
 
