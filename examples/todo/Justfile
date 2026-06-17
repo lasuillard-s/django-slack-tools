@@ -1,0 +1,39 @@
+_default:
+    just --list
+
+# Install dependencies
+install:
+    uv python install
+    uv sync --frozen
+
+# Configure settings
+configure:
+    #!/usr/bin/env sh
+    if [ ! -f .env ]; then
+        cp .env.example .env
+        read -r -p 'Please update placeholders in .env file with your settings. Then press enter to continue.'
+    fi
+
+# Run full development server with Django and Celery with Beat
+run:
+    #!/usr/bin/env sh
+    set -o errexit
+
+    # Start services
+    cleanup() {
+        docker compose down
+    }
+    docker compose up --detach
+    trap cleanup EXIT
+
+    # Prepare database
+    uv run python manage.py migrate
+    uv run python manage.py loaddata ./dump.json
+    DJANGO_SUPERUSER_USERNAME=admin DJANGO_SUPERUSER_EMAIL=admin@admin.admin DJANGO_SUPERUSER_PASSWORD=admin \
+        uv run python manage.py createsuperuser --no-input
+
+    # Run the example app (Ctrl-C to stop, then cleanup handler will stop services for you)
+    uvx honcho@2 start
+
+# Install, configure and run
+go: install configure run
