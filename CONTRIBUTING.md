@@ -22,8 +22,9 @@ This project uses the following tech stack:
 - [Django](https://www.djangoproject.com/) LTS
 - [slack-bolt](https://github.com/slackapi/bolt-python) for Slack integrations
 - [uv](https://docs.astral.sh/uv/) for dependency management and packaging
-- [Ruff](https://docs.astral.sh/ruff/) to lint and format Python code, and [mypy](https://mypy-lang.org) for type checking
+- [Ruff](https://docs.astral.sh/ruff/) to lint and format Python code, and [Mypy](https://mypy-lang.org) for type checking
 - [pytest](https://docs.pytest.org/en/latest) for testing
+- [MkDocs](https://www.mkdocs.org) for documentation
 
 ### 📂 Key directory structure
 
@@ -35,6 +36,7 @@ This project uses the following tech stack:
 - `flake.nix`: Flake configuration for the development environment
 - `Justfile`: Commands for development
 - `manage.py`: Symlink to `testproj/manage.py` for Django app development
+- `mkdocs.yaml`: MkDocs configuration
 - `noxfile.py`: Nox configuration for testing
 - `pyproject.toml`: Project dependencies and configuration
 
@@ -73,3 +75,5 @@ This project's distribution is built using `uv` and published to PyPI via GitHub
 1. Review and merge the generated pull request
 1. Create and publish a GitHub release with the new version as tag
 1. The release workflow will automatically build and publish the package to PyPI
+
+Documentation is published to [GitHub Pages](https://lasuillard-s.github.io/django-slack-tools/) via [docs.yaml](./.github/workflows/docs.yaml) when changes are pushed to the `main` branch or to a `v*` tag.
