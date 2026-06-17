@@ -34,6 +34,8 @@ This project uses the following tech stack:
 - `tests/`: Project tests
 - `flake.nix`: Flake configuration for the development environment
 - `Justfile`: Commands for development
+- `manage.py`: Symlink to `testproj/manage.py` for Django app development
+- `noxfile.py`: Nox configuration for testing
 - `pyproject.toml`: Project dependencies and configuration
 
 ## 🔧 Set up the development environment

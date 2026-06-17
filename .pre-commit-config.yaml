@@ -54,4 +54,4 @@ repos:
         language: system
         types: [python]
         pass_filenames: false
-        entry: uv run pytest
+        entry: uv run pytest # Not running full tests (nox) in pre-commit for quick feedback

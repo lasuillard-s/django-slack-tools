@@ -71,7 +71,7 @@ lint:
 
 # Run all tests
 test:
-    uv run pytest
+    uv run nox
 
 # =============================================================================
 # Utility
