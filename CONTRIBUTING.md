@@ -4,7 +4,7 @@ Thank you for your interest in contributing to this project, **django-slack-tool
 
 ## 🐛 Reporting issues
 
-Please report issues in our [GitHub repository](https://github.com/lasuillard-s/aws-annoying/issues). Before submitting an issue, please search for existing issues to avoid duplicates.
+Please report issues in our [GitHub repository](https://github.com/lasuillard-s/django-slack-tools/issues). Before submitting an issue, please search for existing issues to avoid duplicates.
 
 ## 🏗️ Project overview
 
@@ -18,7 +18,7 @@ This project provides utilities and examples to help you integrate Slack into yo
 
 This project uses the following tech stack:
 
-- [Python](https://www.python.org) 3.10
+- [Python](https://www.python.org) 3.10+
 - [Django](https://www.djangoproject.com/) LTS
 - [slack-bolt](https://github.com/slackapi/bolt-python) for Slack integrations
 - [uv](https://docs.astral.sh/uv/) for dependency management and packaging
