@@ -67,7 +67,7 @@ Feel free to submit pull requests on GitHub. Before opening a PR, ensure your ch
 
 This project's distribution is built using `uv` and published to PyPI via GitHub Actions. To release a new version, follow these steps:
 
-1. Dispatch workflow [prepare-release](./.github/workflows/prepare-release.yaml) with the new version as input
+1. Dispatch workflow [Prepare Release](https://github.com/lasuillard-s/django-slack-tools/actions/workflows/prepare-release.yaml) with the new version as input
 1. Review and merge the generated pull request
 1. Create and publish a GitHub release with the new version as tag
 1. The release workflow will automatically build and publish the package to PyPI
