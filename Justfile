@@ -1,5 +1,3 @@
-set shell := ["bash", "-cu"]
-
 _default:
     just --list
 
