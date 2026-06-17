@@ -40,6 +40,8 @@ jobs:
           enable-cache: true
 
       - name: Set version
+        env:
+          UV_FROZEN: 0  # Allow lock file to be updated
         run: |
           tag="${{ inputs.tag }}"
           tag_no_v="${tag#v}"
