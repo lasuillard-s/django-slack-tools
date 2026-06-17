@@ -65,7 +65,7 @@ jobs:
             - Bumps package version to `${{ inputs.tag }}` (without creating a git tag)
             - Ready for review and merge
 
-            ### Next Steps
+            ### Next steps
             1. Review and merge this PR
             2. Create and publish a GitHub release with tag `${{ inputs.tag }}`
             3. The release workflow will automatically build and publish the package to PyPI
