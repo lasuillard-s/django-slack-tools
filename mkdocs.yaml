@@ -17,7 +17,6 @@ plugins:
   - mike
 nav:
   - Introduction: index.md
-  - Quick Start: quick-start.md
   - Usages:
       - Sending Messages: usages/sending-messages.md
       - Celery Support: usages/celery-support.md

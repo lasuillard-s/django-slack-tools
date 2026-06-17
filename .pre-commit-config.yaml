@@ -1,4 +1,3 @@
-default_stages: [pre-commit]
 fail_fast: true
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -34,14 +33,6 @@ repos:
         types: [python]
         entry: uv run ruff format
 
-      - id: django-migration
-        name: Check migrations created for model changes
-        language: system
-        types: [python]
-        pass_filenames: false
-        entry: uv run python manage.py makemigrations
-        args: [--check, --dry-run]
-
       - id: mypy
         name: Type check with Mypy
         language: system
@@ -50,13 +41,17 @@ repos:
         entry: uv run mypy
         args: [--show-error-codes, --pretty, .]
 
+      - id: django-migration
+        name: Check migrations created for model changes
+        language: system
+        types: [python]
+        pass_filenames: false
+        entry: uv run python manage.py makemigrations
+        args: [--check, --dry-run]
+
       - id: pytest
         name: Test with pytest
         language: system
         types: [python]
         pass_filenames: false
         entry: uv run pytest
-
-ci:
-  autofix_prs: true
-  autoupdate_schedule: quarterly

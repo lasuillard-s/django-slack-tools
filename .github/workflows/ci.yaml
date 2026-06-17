@@ -6,18 +6,26 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   UV_FROZEN: 1
 
 jobs:
   lint:
+    name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
           version: latest
           enable-cache: true
@@ -25,20 +33,20 @@ jobs:
       - name: Install deps
         run: uv sync
 
-      - name: Ruff check
+      - name: Check code formatting
+        run: uv run ruff format --check .
+
+      - name: Lint code
         run: uv run ruff check .
 
-      - name: Ruff format check
-        run: uv run ruff format --check .
+      - name: Type check
+        run: uv run mypy --show-error-codes --pretty .
 
       - name: Check migrations
         run: uv run python manage.py makemigrations --check --dry-run
 
-      - name: Mypy
-        run: uv run mypy --show-error-codes --pretty .
-
   test:
-    name: test (py${{ matrix.python-version }}, django${{ matrix.django-version }})
+    name: Test (py${{ matrix.python-version }}, django${{ matrix.django-version }})
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -51,13 +59,16 @@ jobs:
         django-version: ["5.2"]
 
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
           version: latest
           enable-cache: true
 
-      - name: Set Python version
+      - name: Override Python version
         run: uv python pin "${{ matrix.python-version }}"
 
       - name: Install deps

@@ -25,14 +25,15 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            git
-            gnumake
             pre-commit
+            just
             uv
             fixedPipx
+            gettext
+            ngrok
           ];
           shellHook = ''
-
+            pre-commit install
           '';
         };
       }

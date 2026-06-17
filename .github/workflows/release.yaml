@@ -4,18 +4,26 @@ on:
   release:
     types: [published]
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 env:
   UV_FROZEN: 1
 
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
           version: latest
           enable-cache: true
@@ -30,7 +38,7 @@ jobs:
         uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda # v3.0.0
         with:
           tag_name: ${{ github.event.release.tag_name }}
-          generate_release_notes: true
+          generate_release_notes: false
           files: dist/*
 
       - name: Show files
@@ -43,6 +51,7 @@ jobs:
           path: dist/
 
   publish-pypi:
+    name: Publish to PyPI
     needs: release
     runs-on: ubuntu-latest
     environment: pypi

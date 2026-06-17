@@ -1,16 +1,16 @@
 [project]
 name = "django-slack-tools"
 version = "0.4.1"
-description = "Little helpers working with Slack bot 🤖 in Django."
+description = "Little helpers for working with Slack bots 🤖 in Django."
 authors = [{ name = "Yuchan Lee", email = "lasuillard@gmail.com" }]
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10, <4.0"
 dependencies = [
-	"django>=5.2,<6",
-	"slack-bolt>=1,<2",
-	"xmltodict>=1.0.4,<2",
-	"pydantic>=2,<3",
+  "django>=5.2,<6",
+  "slack-bolt>=1,<2",
+  "xmltodict>=1.0.4,<2",
+  "pydantic>=2,<3",
 ]
 
 [project.optional-dependencies]
@@ -18,27 +18,27 @@ celery = ["celery>=5,<6"]
 
 [dependency-groups]
 dev = [
-	"django-debug-toolbar==6.3.0",
-	"django-extensions==4.1",
-	"django-stubs[compatible-mypy]==6.0.5",
-	"ipykernel==7.2.0",
-	"mkdocs-material==9.7.6",
-	"mkdocs==1.6.1",
-	"mkdocstrings[python]==1.0.4",
-	"mypy==2.1.0",
-	"ruff==0.15.15",
-	"mike==2.2.0",
-	"coverage==7.14.1",
-	"django-coverage-plugin==3.2.2",
-	"factory-boy==3.3.3",
-	"faker==40.20.0",
-	"pytest-cov==7.1.0",
-	"pytest-django==4.12.0",
-	"pytest-sugar==1.1.1",
-	"pytest-xdist==3.8.0",
-	"pytest==9.0.3",
-	"nox==2026.4.10",
-	"devobs==0.2.6",
+  "django-debug-toolbar==6.3.0",
+  "django-extensions==4.1",
+  "django-stubs[compatible-mypy]==6.0.5",
+  "ipykernel==7.2.0",
+  "mkdocs-material==9.7.6",
+  "mkdocs==1.6.1",
+  "mkdocstrings[python]==1.0.4",
+  "mypy==2.1.0",
+  "ruff==0.15.15",
+  "mike==2.2.0",
+  "coverage==7.14.1",
+  "django-coverage-plugin==3.2.2",
+  "factory-boy==3.3.3",
+  "faker==40.20.0",
+  "pytest-cov==7.1.0",
+  "pytest-django==4.12.0",
+  "pytest-sugar==1.1.1",
+  "pytest-xdist==3.8.0",
+  "pytest==9.0.3",
+  "nox==2026.4.10",
+  "devobs==0.2.6",
 ]
 
 [project.urls]
@@ -55,7 +55,14 @@ packages = ["django_slack_tools"]
 
 [tool.ruff]
 lint.select = ["ALL"]
-lint.ignore = ["ANN401", "TD003", "FIX002", "D105", "UP045"]
+lint.ignore = [
+  "ANN401",
+  "TD003",
+  "FIX002",
+  "D105",
+  "UP045",
+  "COM812", # Formatting conflict
+]
 line-length = 120
 
 [tool.ruff.lint.extend-per-file-ignores]
@@ -89,17 +96,17 @@ django_settings_module = "testproj.config.settings"
 
 [tool.pytest.ini_options]
 addopts = [
-	"--numprocesses=auto",
-	"--strict-markers",
-	"--doctest-modules",
-	"--ds=testproj.config.settings",
-	"--reuse-db",
-	"--cov",
-	"--cov-report=term",
-	"--cov-report=xml",
-	"--show-capture=no",
-	"--junitxml=junit.xml",
-	"-rs",
+  "--numprocesses=auto",
+  "--strict-markers",
+  "--doctest-modules",
+  "--ds=testproj.config.settings",
+  "--reuse-db",
+  "--cov",
+  "--cov-report=term",
+  "--cov-report=xml",
+  "--show-capture=no",
+  "--junitxml=junit.xml",
+  "-rs",
 ]
 testpaths = ["tests"]
 markers = ["slack: Tests working with Slack."]
