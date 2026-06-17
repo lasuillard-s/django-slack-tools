@@ -60,12 +60,12 @@ line-length = 120
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-  "ANN401",
+  "ANN401", # Don't be too strict
   "COM812", # Formatting conflict
   "D105",
   "FIX002",
   "TD003",
-  "UP045",
+  "UP045",  # Pydantic may not well work with this
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
