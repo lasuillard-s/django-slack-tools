@@ -17,6 +17,29 @@ alias up := update
 # Development
 # =============================================================================
 
+# Run all checks
+ci: lint test
+
+# Autoformat code
+format:
+    uv run ruff format .
+
+alias fmt := format
+
+# Run all linters
+lint:
+    uv run ruff check .
+    uv run mypy --show-error-codes --pretty .
+
+# Run all tests
+test:
+    uv run nox
+
+# Apply autofixes
+fix:
+    uv run ruff check --fix .
+    uv run ruff format .
+
 # Build this project
 build:
     uv build
@@ -29,6 +52,16 @@ run:
 docs:
     uv run mkdocs serve
 
+# =============================================================================
+# Utility
+# =============================================================================
+
+# Run Django shell for test project
+shell:
+    uv run python manage.py shell
+
+alias sh := shell
+
 # Create database migrations
 migration:
     uv run python manage.py makemigrations
@@ -36,6 +69,13 @@ migration:
 # Apply database migrations
 migrate:
     uv run python manage.py migrate
+
+# Create local admin user (ID/PW admin/admin)
+superuser:
+    DJANGO_SUPERUSER_USERNAME=admin DJANGO_SUPERUSER_EMAIL=admin@admin.admin DJANGO_SUPERUSER_PASSWORD=admin \
+        uv run python manage.py createsuperuser --no-input
+
+alias su := superuser
 
 # Update translation files
 messages:
@@ -48,46 +88,6 @@ compile-messages:
     uv run python manage.py compilemessages --ignore 'examples/*'
 
 alias compmsg := compile-messages
-
-# Run all checks
-ci: lint test
-
-# Autoformat code
-format:
-    uv run ruff format .
-
-alias fmt := format
-
-# Apply autofixes
-fix:
-    uv run ruff check --fix .
-    uv run ruff format .
-
-# Run all linters
-lint:
-    uv run ruff check .
-    uv run mypy --show-error-codes --pretty .
-
-# Run all tests
-test:
-    uv run nox
-
-# =============================================================================
-# Utility
-# =============================================================================
-
-# Run Django shell for test project
-shell:
-    uv run python manage.py shell
-
-alias sh := shell
-
-# Create local admin user (ID/PW admin/admin)
-superuser:
-    DJANGO_SUPERUSER_USERNAME=admin DJANGO_SUPERUSER_EMAIL=admin@admin.admin DJANGO_SUPERUSER_PASSWORD=admin \
-        uv run python manage.py createsuperuser --no-input
-
-alias su := superuser
 
 # Remove temporary files
 clean:
