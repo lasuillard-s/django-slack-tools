@@ -91,7 +91,7 @@ alias compmsg := compile-messages
 
 # Remove temporary files
 clean:
-    rm -rf \
+    rm --recursive --force \
         .mypy_cache/ \
         .pytest_cache/ \
         .ruff_cache/ \
