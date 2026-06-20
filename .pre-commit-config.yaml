@@ -21,20 +21,20 @@ repos:
   - repo: local
     hooks:
       - id: ruff-check
-        name: Fix using Ruff
+        name: ruff check
         language: system
         types: [python]
         entry: uv run ruff check
         args: [--fix]
 
       - id: ruff-format
-        name: Format using Ruff
+        name: ruff format
         language: system
         types: [python]
         entry: uv run ruff format
 
       - id: mypy
-        name: Type check with Mypy
+        name: mypy
         language: system
         types: [python]
         pass_filenames: false
@@ -42,7 +42,7 @@ repos:
         args: [--show-error-codes, --pretty, .]
 
       - id: django-migration
-        name: Check migrations created for model changes
+        name: check django migrations
         language: system
         types: [python]
         pass_filenames: false
@@ -50,7 +50,7 @@ repos:
         args: [--check, --dry-run]
 
       - id: pytest
-        name: Test with pytest
+        name: pytest
         language: system
         types: [python]
         pass_filenames: false
