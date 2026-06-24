@@ -5,17 +5,5 @@
   ],
   "ignorePaths": [
     "examples/**"
-  ],
-  "packageRules": [
-    {
-      "matchManagers": [
-        "pep621"
-      ],
-      "matchDepTypes": [
-        "dependencies",
-        "optional-dependencies"
-      ],
-      "rangeStrategy": "widen"
-    }
   ]
 }
