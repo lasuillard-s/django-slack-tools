@@ -26,7 +26,7 @@ dev = [
   "mkdocs==1.6.1",
   "mkdocstrings[python]==1.0.4",
   "mypy==2.1.0",
-  "ruff==0.15.16",
+  "ruff==0.15.17",
   "mike==2.2.0",
   "coverage==7.14.1",
   "django-coverage-plugin==3.2.2",
