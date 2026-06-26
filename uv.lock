@@ -613,15 +613,6 @@ wheels = [
 ]
 
 [[package]]
-name = "devobs"
-version = "0.2.6"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/5e/03/62a65321325ddd16eb88bf21bbe103fe490efac17ca8f28688e9dd13887c/devobs-0.2.6.tar.gz", hash = "sha256:274debbf75d38d81414f3a0cc33f8defb2df1f87f89d4eea2757cd6ad643878b", size = 37542, upload-time = "2026-04-02T10:03:37.216Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/2b/12/f8d2438272e918dd1fc364f752b39769f6c05e09861df83b70033063eee2/devobs-0.2.6-py3-none-manylinux_2_39_x86_64.whl", hash = "sha256:9000cb8ab5800391a1866130db21b3dfc2b4cd46f1e567573e7aba4debebe151", size = 1407299, upload-time = "2026-04-02T10:03:35.488Z" },
-]
-
-[[package]]
 name = "distlib"
 version = "0.4.3"
 source = { registry = "https://pypi.org/simple" }
@@ -701,7 +692,6 @@ celery = [
 [package.dev-dependencies]
 dev = [
     { name = "coverage" },
-    { name = "devobs" },
     { name = "django-coverage-plugin" },
     { name = "django-debug-toolbar" },
     { name = "django-extensions" },
@@ -736,7 +726,6 @@ provides-extras = ["celery"]
 [package.metadata.requires-dev]
 dev = [
     { name = "coverage", specifier = "==7.14.1" },
-    { name = "devobs", specifier = "==0.2.6" },
     { name = "django-coverage-plugin", specifier = "==3.2.2" },
     { name = "django-debug-toolbar", specifier = "==6.3.0" },
     { name = "django-extensions", specifier = "==4.1" },

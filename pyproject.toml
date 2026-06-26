@@ -38,7 +38,6 @@ dev = [
   "pytest-xdist==3.8.0",
   "pytest==9.0.3",
   "nox==2026.4.10",
-  "devobs==0.2.6",
 ]
 
 [project.urls]

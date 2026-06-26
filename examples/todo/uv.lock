@@ -195,7 +195,7 @@ wheels = [
 
 [[package]]
 name = "django-slack-tools"
-version = "0.4.1"
+version = "0.4.2"
 source = { directory = "../../" }
 dependencies = [
     { name = "django" },
@@ -217,14 +217,13 @@ provides-extras = ["celery"]
 [package.metadata.requires-dev]
 dev = [
     { name = "coverage", specifier = "==7.14.1" },
-    { name = "devobs", specifier = "==0.2.6" },
     { name = "django-coverage-plugin", specifier = "==3.2.2" },
     { name = "django-debug-toolbar", specifier = "==6.3.0" },
     { name = "django-extensions", specifier = "==4.1" },
     { name = "django-stubs", extras = ["compatible-mypy"], specifier = "==6.0.5" },
     { name = "factory-boy", specifier = "==3.3.3" },
-    { name = "faker", specifier = "==40.20.0" },
-    { name = "ipykernel", specifier = "==7.2.0" },
+    { name = "faker", specifier = "==40.23.0" },
+    { name = "ipykernel", specifier = "==7.3.0" },
     { name = "mike", specifier = "==2.2.0" },
     { name = "mkdocs", specifier = "==1.6.1" },
     { name = "mkdocs-material", specifier = "==9.7.6" },
@@ -236,7 +235,7 @@ dev = [
     { name = "pytest-django", specifier = "==4.12.0" },
     { name = "pytest-sugar", specifier = "==1.1.1" },
     { name = "pytest-xdist", specifier = "==3.8.0" },
-    { name = "ruff", specifier = "==0.15.15" },
+    { name = "ruff", specifier = "==0.15.17" },
 ]
 
 [[package]]
