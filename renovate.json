@@ -12,7 +12,7 @@
         "pep621"
       ],
       "matchJsonata": [
-        "managerData.depGroup != 'dev'"
+        "$not($exists(managerData.depGroup)) or managerData.depGroup != 'dev'"
       ],
       "rangeStrategy": "widen"
     }
