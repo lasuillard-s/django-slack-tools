@@ -1,5 +1,7 @@
-# flake8: noqa: D100, D103
+# ruff: noqa: D100, D103, T201
 from __future__ import annotations
+
+import os
 
 import nox
 
@@ -21,6 +23,13 @@ def tests(
     *,
     extras: list[str],
 ) -> None:
-    # Run the tests via `uv`
-    session.run_install("uv", "sync", "--quiet", *[f"--extra={extra}" for extra in extras])
-    session.run("uv", "run", "pytest", "--cov-append")
+    is_gha = bool(os.environ.get("GITHUB_ACTIONS"))
+    try:
+        if is_gha:
+            print(f"::group::{session.name}")
+
+        session.run_install("uv", "sync", "--quiet", *[f"--extra={extra}" for extra in extras])
+        session.run("uv", "run", "pytest", "--cov-append")
+    finally:
+        if is_gha:
+            print("::endgroup::")
