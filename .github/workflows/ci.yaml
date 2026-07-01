@@ -92,7 +92,7 @@ jobs:
         run: uv sync
 
       - name: Install Django
-        run: uv pip install Django=="${{ matrix.django-version }}.*"
+        run: uv pip install Django=="${{ matrix.django-version }}"
 
       - name: Run tests
         run: uv run nox
