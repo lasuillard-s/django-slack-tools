@@ -1,4 +1,5 @@
 name: Prepare Release
+run-name: Prepare Release (${{ inputs.tag }})
 
 on:
   workflow_dispatch:
@@ -41,7 +42,7 @@ jobs:
 
       - name: Set version
         env:
-          UV_FROZEN: 0  # Allow lock file to be updated
+          UV_FROZEN: 0 # Allow lock file to be updated
         run: |
           tag="${{ inputs.tag }}"
           tag_no_v="${tag#v}"
