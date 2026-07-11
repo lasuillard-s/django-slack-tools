@@ -75,7 +75,7 @@ class SlackMessageRecipientAdmin(admin.ModelAdmin):
     # Changelist
     # ------------------------------------------------------------------------
     date_hierarchy = "last_modified"
-    search_fields = ("alias", "channel_name", "channel", "mentions__mention")
+    search_fields = ("alias", "channel_name", "channel", "mentions__name")
     list_display = ("id", "alias", "channel_name", "_num_mentions", "created", "last_modified")
     list_display_links = ("id", "alias", "channel_name")
     list_filter = (
