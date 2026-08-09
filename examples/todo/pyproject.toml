@@ -8,7 +8,7 @@ readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = [
     "django-slack-tools",
-    "django==5.2.15",
+    "django==5.2.16",
     "celery[django,redis]==5.4.0",
     "django-celery-beat==2.9.0",
     "psycopg2-binary==2.9.10",
