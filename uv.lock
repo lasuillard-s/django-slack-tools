@@ -687,7 +687,7 @@ wheels = [
 
 [[package]]
 name = "django-slack-tools"
-version = "0.5.0"
+version = "0.5.1"
 source = { editable = "." }
 dependencies = [
     { name = "django", version = "5.2.17", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
@@ -729,7 +729,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "celery", marker = "extra == 'celery'", specifier = ">=5,<6" },
-    { name = "django", specifier = ">=5,<7" },
+    { name = "django", specifier = ">=5.2.16,<7" },
     { name = "pydantic", specifier = ">=2,<3" },
     { name = "slack-bolt", specifier = ">=1,<2" },
     { name = "xmltodict", specifier = ">=1.0.4,<2" },
