@@ -61,6 +61,7 @@ select = ["ALL"]
 ignore = [
   "ANN401", # Don't be too strict
   "COM812", # Formatting conflict
+  "CPY",
   "D105",
   "FIX002",
   "TD003",

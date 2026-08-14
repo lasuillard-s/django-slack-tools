@@ -68,7 +68,7 @@ DJANGO_SLACK_TOOLS = {
                 },
             },
         },
-    }
+    },
 }
 ```
 
