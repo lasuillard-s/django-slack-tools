@@ -51,7 +51,6 @@ This repository uses [Nix Flakes](https://nix.dev/concepts/flakes.html) to manag
 - `pre-commit`
 - `just`
 - `uv`
-- `pipx`
 - `gettext` for i18n
 - `ngrok` for local Slack bot testing
 
