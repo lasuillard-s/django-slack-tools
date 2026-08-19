@@ -17,13 +17,6 @@
           inherit system;
           config.allowUnfree = true;
         };
-
-        # BUG: https://github.com/nixos/nixpkgs/issues/522307
-        fixedPipx = pkgs.python3Packages.toPythonApplication (
-          pkgs.python3Packages.pipx.overridePythonAttrs (oldAttrs: {
-            doCheck = false;
-          })
-        );
       in
       {
         devShells.default = pkgs.mkShell {
@@ -31,12 +24,14 @@
             pre-commit
             just
             uv
-            fixedPipx
             gettext
             ngrok
           ];
           shellHook = ''
             pre-commit install
+
+            # Workaround for pre-commit dependency leak
+            unset PYTHONPATH
           '';
         };
       }
