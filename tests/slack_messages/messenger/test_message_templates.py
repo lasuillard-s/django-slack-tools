@@ -49,7 +49,6 @@ class TestDjangoTemplate:
         # Assert
         assert actual == expect
 
-    # TODO(lasuillard): Add more tests rendering with context (pick complex templates for test): search-results-1.xml, search-results-2.xml  # noqa: E501
     def test_render_complex_with_context(self, data_dir: Path) -> None:
         # Arrange
         template = DjangoTemplate(file="complex-template-with-context.xml")

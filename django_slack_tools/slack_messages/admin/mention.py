@@ -101,7 +101,6 @@ def _get_mentionable_items() -> dict[str, _Mentionable]:
     items: dict[str, _Mentionable] = {}
 
     # Fetch members from Slack
-    # TODO(lasuillard): Need pagination in future
     response = slack_app.client.users_list()
     members: list[dict] = response.get("members", default=[])
 

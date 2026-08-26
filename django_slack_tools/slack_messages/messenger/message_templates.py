@@ -101,7 +101,7 @@ def _xml_to_dict(xml: str) -> dict:
 
 def _preprocess_xml(xml: str) -> str:
     """Normalize XML text nodes."""
-    root = ET.fromstring(xml)  # noqa: S314 ; TODO(lasuillard): Naive belief that XML is safe
+    root = ET.fromstring(xml)  # noqa: S314
     for node in root.iter():
         node.tag = _rename_tag(node.tag)
 
@@ -121,7 +121,6 @@ def _xml_postprocessor(path: Any, key: str, value: Any) -> tuple[str, Any]:  # n
     if value == "false":
         return key, False
 
-    # TODO(lasuillard): Should coerce all numeric-like strings to numbers?
     if key == "indent":
         return key, int(value)
 

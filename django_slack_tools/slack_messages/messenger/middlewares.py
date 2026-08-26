@@ -137,8 +137,6 @@ class DjangoDatabasePolicyHandler(BaseMiddleware):
         return self._messenger
 
     def process_request(self, request: MessageRequest) -> MessageRequest | None:  # noqa: D102
-        # TODO(lasuillard): Hacky way to stop the request, need to find a better way
-        #                   Some extra field (request.meta) could be added to share control context
         if request.context.get(self._RECURSION_DETECTION_CONTEXT_KEY, False):
             return request
 
@@ -165,9 +163,6 @@ class DjangoDatabasePolicyHandler(BaseMiddleware):
             req = MessageRequest(channel=recipient.channel, template_key=policy.code, context=context, header=header)
             requests.append(req)
 
-        # TODO(lasuillard): How to provide users the access the newly created messages?
-        #                   currently, it's possible with persisters but it would require some additional work
-        # TODO(lasuillard): Can `sys.setrecursionlimit` be used to prevent spamming if recursion occurs?
         for req in requests:
             self.messenger.send_request(req)
 
