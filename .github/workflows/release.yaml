@@ -39,7 +39,9 @@ jobs:
         with:
           tag_name: ${{ github.event.release.tag_name }}
           generate_release_notes: false
-          files: dist/*
+          files: |
+            dist/*.whl
+            dist/*.tar.gz
 
       - name: Show files
         run: ls -l --all --recursive dist
