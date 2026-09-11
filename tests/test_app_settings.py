@@ -10,7 +10,7 @@ from django_slack_tools.app_settings import AppSettings, get_settings_from_djang
 from django_slack_tools.messenger.shortcuts import Messenger
 
 if TYPE_CHECKING:
-    from pytest_django.fixtures import SettingsWrapper
+    from pytest_django.fixtures import Settings as SettingsWrapper
 
     from django_slack_tools.app_settings import SettingsDict
 
