@@ -3,13 +3,12 @@
 from __future__ import annotations
 
 from logging import getLogger
-from typing import TYPE_CHECKING, TypedDict
+from typing import TYPE_CHECKING, NotRequired, Self, TypedDict
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.module_loading import import_string
 from slack_bolt import App
-from typing_extensions import NotRequired, Self
 
 from django_slack_tools.utils.import_helper import LazyInitSpec, lazy_init
 

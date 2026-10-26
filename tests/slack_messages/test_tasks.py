@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from unittest import mock
 
 import pytest
@@ -42,7 +42,7 @@ class TestSlackMessage:
 class TestCleanupOldMessages:
     def test_cleanup_old_messages(self) -> None:
         # Arrange
-        ts = datetime(2024, 10, 9, 3, 48, 22, tzinfo=timezone.utc)
+        ts = datetime(2024, 10, 9, 3, 48, 22, tzinfo=UTC)
         _should_deleted = [
             # Should be deleted
             SlackMessageFactory.create(created=ts - timedelta(minutes=6)),
@@ -64,7 +64,7 @@ class TestCleanupOldMessages:
 
     def test_cleanup_old_messages_skip_if_threshold_is_none(self) -> None:
         # Arrange
-        ts = datetime(2024, 10, 9, 3, 48, 22, tzinfo=timezone.utc)
+        ts = datetime(2024, 10, 9, 3, 48, 22, tzinfo=UTC)
         SlackMessageFactory(created=ts - timedelta(weeks=4))
         SlackMessageFactory(created=ts - timedelta(hours=1))
         SlackMessageFactory()

@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 
-from typing import Any, TypedDict
+from typing import Any, NotRequired, TypedDict
 
 from django.utils.module_loading import import_string
-from typing_extensions import NotRequired
 
 LazyInitSpec = TypedDict(
     "LazyInitSpec",
