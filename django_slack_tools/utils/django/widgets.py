@@ -26,4 +26,4 @@ class JSONWidget(widgets.Textarea):
         except Exception:
             logger.exception("Error while formatting JSON object")
 
-        return super().format_value(value)
+        return super().format_value(value)  # type: ignore[no-any-return]
