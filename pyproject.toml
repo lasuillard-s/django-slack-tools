@@ -5,7 +5,7 @@ description = "Little helpers for working with Slack bots 🤖 in Django."
 authors = [{ name = "Yuchan Lee", email = "lasuillard@gmail.com" }]
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10, <4.0"
+requires-python = ">=3.11, <4.0"
 dependencies = [
   "django>=5.2.16,<7",
   "slack-bolt>=1,<2",
