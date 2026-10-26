@@ -18,7 +18,7 @@ This project provides utilities and examples to help you integrate Slack into yo
 
 This project uses the following tech stack:
 
-- [Python](https://www.python.org) 3.10+
+- [Python](https://www.python.org) 3.11+
 - [Django](https://www.djangoproject.com/) LTS
 - [slack-bolt](https://github.com/slackapi/bolt-python) for Slack integrations
 - [uv](https://docs.astral.sh/uv/) for dependency management and packaging
