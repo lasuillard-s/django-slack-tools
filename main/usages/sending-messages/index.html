@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -797,87 +797,87 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>django_slack_tools/slack_messages/shortcuts.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span>
-<span class="normal"><a href="#__codelineno-0-53">53</a></span>
-<span class="normal"><a href="#__codelineno-0-54">54</a></span>
-<span class="normal"><a href="#__codelineno-0-55">55</a></span>
-<span class="normal"><a href="#__codelineno-0-56">56</a></span>
-<span class="normal"><a href="#__codelineno-0-57">57</a></span>
-<span class="normal"><a href="#__codelineno-0-58">58</a></span>
-<span class="normal"><a href="#__codelineno-0-59">59</a></span>
-<span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span>
-<span class="normal"><a href="#__codelineno-0-68">68</a></span>
-<span class="normal"><a href="#__codelineno-0-69">69</a></span>
-<span class="normal"><a href="#__codelineno-0-70">70</a></span>
-<span class="normal"><a href="#__codelineno-0-71">71</a></span>
-<span class="normal"><a href="#__codelineno-0-72">72</a></span>
-<span class="normal"><a href="#__codelineno-0-73">73</a></span>
-<span class="normal"><a href="#__codelineno-0-74">74</a></span>
-<span class="normal"><a href="#__codelineno-0-75">75</a></span>
-<span class="normal"><a href="#__codelineno-0-76">76</a></span>
-<span class="normal"><a href="#__codelineno-0-77">77</a></span>
-<span class="normal"><a href="#__codelineno-0-78">78</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="k">def</span><span class="w"> </span><span class="nf">slack_message</span><span class="p">(</span>  <span class="c1"># noqa: PLR0913</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="n">to</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="o">*</span><span class="p">,</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="n">messenger_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="n">header</span><span class="p">:</span> <span class="n">MessageHeader</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="n">template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>    <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MessageResponse</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Shortcut for sending a Slack message.</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">    Args:</span>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">        to: Recipient.</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">        messenger_name: Messenger name. If not set, default messenger is used.</span>
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">        header: Slack message control header.</span>
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        template: Message template key. Cannot be used with `message`.</span>
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">        context: Context for rendering the template. Only used with `template`.</span>
-</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">        message: Simple message text. Cannot be used with `template`.</span>
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a>
-</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">    Returns:</span>
-</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">        Sent message instance or `None`.</span>
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">template</span> <span class="ow">and</span> <span class="n">message</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">template</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">message</span><span class="p">):</span>
-</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Either `template` or `message` must be set, but not both.&quot;</span>
-</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a>
-</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="n">messenger</span> <span class="o">=</span> <span class="n">get_messenger</span><span class="p">(</span><span class="n">messenger_name</span><span class="p">)</span>
-</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">header</span> <span class="o">=</span> <span class="n">MessageHeader</span><span class="o">.</span><span class="n">from_any</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a>
-</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="k">if</span> <span class="n">message</span><span class="p">:</span>
-</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="n">request</span> <span class="o">=</span> <span class="n">MessageRequest</span><span class="p">(</span>
-</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a>            <span class="n">channel</span><span class="o">=</span><span class="n">to</span><span class="p">,</span>
-</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70"></a>            <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span>
-</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a>            <span class="n">body</span><span class="o">=</span><span class="n">MessageBody</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">message</span><span class="p">),</span>
-</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a>            <span class="n">template_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73"></a>            <span class="n">context</span><span class="o">=</span><span class="p">{},</span>
-</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="p">)</span>
-</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a>        <span class="k">return</span> <span class="n">messenger</span><span class="o">.</span><span class="n">send_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a>
-</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="n">context</span> <span class="o">=</span> <span class="n">context</span> <span class="ow">or</span> <span class="p">{}</span>
-</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="k">return</span> <span class="n">messenger</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-77">77</a></span>
+<span class="normal"><a href="#django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-78">78</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-38"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-38" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-38"></a><span class="k">def</span><span class="w"> </span><span class="nf">slack_message</span><span class="p">(</span>  <span class="c1"># noqa: PLR0913</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-39"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-39" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-39"></a>    <span class="n">to</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-40"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-40" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-40"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-41"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-41" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-41"></a>    <span class="n">messenger_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-42"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-42" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-42"></a>    <span class="n">header</span><span class="p">:</span> <span class="n">MessageHeader</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-43"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-43" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-43"></a>    <span class="n">template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-44"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-44" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-44"></a>    <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-45"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-45" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-45"></a>    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-46"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-46" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-46"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MessageResponse</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-47"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-47" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-47"></a><span class="w">    </span><span class="sd">"""Shortcut for sending a Slack message.</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-48"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-48" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-48"></a>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-49"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-49" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-49"></a><span class="sd">    Args:</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-50"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-50" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-50"></a><span class="sd">        to: Recipient.</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-51"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-51" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-51"></a><span class="sd">        messenger_name: Messenger name. If not set, default messenger is used.</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-52"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-52" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-52"></a><span class="sd">        header: Slack message control header.</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-53"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-53" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-53"></a><span class="sd">        template: Message template key. Cannot be used with `message`.</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-54"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-54" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-54"></a><span class="sd">        context: Context for rendering the template. Only used with `template`.</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-55"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-55" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-55"></a><span class="sd">        message: Simple message text. Cannot be used with `template`.</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-56"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-56" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-56"></a>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-57"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-57" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-57"></a><span class="sd">    Returns:</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-58"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-58" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-58"></a><span class="sd">        Sent message instance or `None`.</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-59"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-59" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-59"></a><span class="sd">    """</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-60"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-60" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-60"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">template</span> <span class="ow">and</span> <span class="n">message</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">template</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">message</span><span class="p">):</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-61"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-61" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-61"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="s2">"Either `template` or `message` must be set, but not both."</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-62"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-62" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-62"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-63"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-63" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-63"></a>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-64"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-64" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-64"></a>    <span class="n">messenger</span> <span class="o">=</span> <span class="n">get_messenger</span><span class="p">(</span><span class="n">messenger_name</span><span class="p">)</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-65"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-65" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-65"></a>    <span class="n">header</span> <span class="o">=</span> <span class="n">MessageHeader</span><span class="o">.</span><span class="n">from_any</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-66"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-66" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-66"></a>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-67"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-67" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-67"></a>    <span class="k">if</span> <span class="n">message</span><span class="p">:</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-68"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-68" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-68"></a>        <span class="n">request</span> <span class="o">=</span> <span class="n">MessageRequest</span><span class="p">(</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-69"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-69" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-69"></a>            <span class="n">channel</span><span class="o">=</span><span class="n">to</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-70"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-70" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-70"></a>            <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-71"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-71" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-71"></a>            <span class="n">body</span><span class="o">=</span><span class="n">MessageBody</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">message</span><span class="p">),</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-72"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-72" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-72"></a>            <span class="n">template_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-73"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-73" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-73"></a>            <span class="n">context</span><span class="o">=</span><span class="p">{},</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-74"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-74" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-74"></a>        <span class="p">)</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-75"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-75" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-75"></a>        <span class="k">return</span> <span class="n">messenger</span><span class="o">.</span><span class="n">send_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-76"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-76" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-76"></a>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-77"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-77" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-77"></a>    <span class="n">context</span> <span class="o">=</span> <span class="n">context</span> <span class="ow">or</span> <span class="p">{}</span>
+</span><span id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__span-0-78"><a id="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-78" name="django_slack_tools.slack_messages.shortcuts.slack_message--source--__codelineno-0-78"></a>    <span class="k">return</span> <span class="n">messenger</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -943,7 +943,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
